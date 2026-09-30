@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CodeChef ABESEC – Events &amp; Recruitments</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="wrap">
+            <a class="brand" href="#home">
+                <i></i>
+                CodeChef ABESEC
+            </a>
+
+            <nav>
+                <a href="#home" data-r="home">Home</a>
+                <a href="#events" data-r="events">Events</a>
+                <a href="#join" data-r="join">Recruitments</a>
+                <a href="#admin" data-r="admin">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap" id="app"></main>
+
+    <footer class="wrap">
+        CodeChef Chapter · ABES Engineering College.
+        Demo build: data is saved in this browser only.
+    </footer>
+    <div
+        class="modal"
+        id="regModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="regTitle"
+    >
+        <div class="sheet">
+
+            <h3 id="regTitle">Register</h3>
+
+            <div class="meta" id="regSub"></div>
+
+            <label for="rName">Full name</label>
+            <input
+                id="rName"
+                autocomplete="name"
+            >
+
+            <label for="rEmail">Email</label>
+            <input
+                id="rEmail"
+                type="email"
+                autocomplete="email"
+            >
+
+            <div class="row">
+
+                <div>
+                    <label for="rCollege">College</label>
+                    <input id="rCollege">
+                </div>
+
+                <div>
+                    <label for="rYear">Year</label>
+
+                    <select id="rYear">
+                        <option>1st</option>
+                        <option>2nd</option>
+                        <option>3rd</option>
+                        <option>4th</option>
+                        <option>Postgraduate</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <label for="rPhone">Phone number</label>
+
+            <input
+                id="rPhone"
+                type="tel"
+                autocomplete="tel"
+            >
+
+            <div class="err" id="rErr"></div>
+
+            <div class="actions">
+                <button class="btn ghost" data-close>
+                    Cancel
+                </button>
+
+                <button class="btn" id="rSubmit">
+                    Submit registration
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Add Event Modal -->
+    <div
+        class="modal"
+        id="evModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="evTitle"
+    >
+        <div class="sheet">
+
+            <h3 id="evTitle">Add event</h3>
+
+            <label for="eName">Event name</label>
+            <input id="eName">
+
+            <div class="row">
+
+                <div>
+                    <label for="eDate">Date &amp; time</label>
+
+                    <input
+                        id="eDate"
+                        type="datetime-local"
+                    >
+                </div>
+
+                <div>
+                    <label for="eCat">Category</label>
+                    <select id="eCat"></select>
+                </div>
+
+            </div>
+
+            <label for="eEnd">
+                Ends (optional, makes it ongoing until then)
+            </label>
+
+            <input
+                id="eEnd"
+                type="datetime-local"
+            >
+
+            <label for="eVenue">Venue</label>
+            <input id="eVenue">
+
+            <label for="eDesc">Description</label>
+
+            <textarea
+                id="eDesc"
+                rows="3"
+            ></textarea>
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="eFeat"
+                    style="width:auto;margin-right:6px"
+                >
+                Feature on home page
+            </label>
+
+            <div class="err" id="eErr"></div>
+
+            <div class="actions">
+
+                <button class="btn ghost" data-close>
+                    Cancel
+                </button>
+
+                <button class="btn" id="eSave">
+                    Save event
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+    ></div>
+<script src="script.js"></script>
+
+</body>
+
+</html>
